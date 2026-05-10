@@ -18,14 +18,11 @@ venv/
 # --- Data Files ---
 *.csv
 *.tsv
-*.txt
 *.json
 *.xlsx
 *.parquet
 *.feather
 *.db
-
-# Keep sample data if needed
 *.csv
 
 # --- Model Files ---
