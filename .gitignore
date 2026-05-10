@@ -1,0 +1,55 @@
+# --- Python ---
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pkl
+*.pickle
+
+# --- Virtual Environments ---
+venv/
+.env/
+.env.bak/
+.venv/
+
+# --- Streamlit ---
+.streamlit/
+
+# --- Data Files ---
+*.csv
+*.tsv
+*.txt
+*.json
+*.xlsx
+*.parquet
+*.feather
+*.db
+
+# Keep sample data if needed
+*.csv
+
+# --- Model Files ---
+*.bin
+*.pt
+*.pth
+*.h5
+*.onnx
+
+# --- UMAP / Embedding Cache ---
+*.umap
+*.npy
+*.npz
+
+# --- OS / Editor Files ---
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# --- Logs ---
+*.log
+
+# --- Build / Dist ---
+build/
+dist/
+*.egg-info/
