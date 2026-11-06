@@ -1,6 +1,0 @@
-streamlit
-pandas
-sentence-transformers
-scikit-learn
-numpy
-umap-learn

@@ -14,22 +14,56 @@
 A lightweight, business‑ready analytics tool that transforms raw text into visual insights.  
 Upload customer feedback, support tickets, policies, CVs, or any text dataset — the app generates embeddings, reduces them to 2D, clusters them, and reveals hidden patterns.
 
-Perfect for SMEs, councils, charities, and teams that need fast, AI‑powered text understanding without complex infrastructure.
+Perfect for SMEs, councils, charities, and teams that need fast, text understanding without complex infrastructure.
 
 ---
 
-# 📸 Screenshots
+## 📑 Table of Contents
+
+- [Why This Project Was Built](#-why-this-project-was-built)
+- [Screenshots](#-screenshots)
+- [Features](#-features)
+- [Real-World Use Cases](#-realworld-use-cases)
+- [Installation](#-installation)
+- [Run the App](#️-run-the-app)
+- [Project Structure](#-project-structure)
+- [How It Works](#-how-it-works)
+- [Example Workflow](#-example-workflow)
+- [Example Use Case](#-example-use-case-customer-feedback)
+- [Why This Project Was Built](#-why-this-project-was-built)
+- [Testing](#-testing)
+- [Roadmap Features](#️-roadmap-features)
+
+---
+
+## 🧠 Why This Project Was Built
+
+- Explore large text datasets without complex AI infrastructure.
+- Visualise embeddings, clusters, and relationships in a simple interface.
+- Make modern NLP techniques more accessible to non-technical users.
+- Quickly uncover themes and patterns in text data.
+
+---
+
+## 📸 Screenshots
+
+<details>
+    <summary>click here</summary>
 
 - Dashboard and CSV preview
 ![Dashboard and CSV preview](screenshots/dashboard_preview_csv.png)
+
 - Scatter graph of embeddings
 ![Scatter graph of embeddings](screenshots/2d%20embeddings.png)
+
 - Cluster summary of the CSV data
 ![Cluster summary of the csv data](screenshots/cluster_summary.png)
 
+</details>
+
 ---
 
-# 🚀 Features
+## 🚀 Features
 
 - Upload **CSV or TXT** files  
 - Choose an **embedding model** (MiniLM by default)  
@@ -44,6 +78,9 @@ Perfect for SMEs, councils, charities, and teams that need fast, AI‑powered te
 
 ## 🧠 Real‑World Use Cases
 
+<details>
+    <summary>click here</summary>
+
 This tool is intentionally small but delivers real business value:
 
 - **Customer Feedback Clustering** — identify themes in reviews and surveys  
@@ -53,13 +90,24 @@ This tool is intentionally small but delivers real business value:
 - **HR & Recruitment Insights** — compare CVs and job descriptions  
 - **SEO Topic Mapping** — visualise content clusters and gaps  
 
+</details>
+
 ---
 
-# 📦 Installation
+## 📦 Installation
+
+### Clone the Repository
 
 ```bash
-pip install -r requirements.txt
+git clone https://github.com/reory/mini_embedding_explorer.git
+cd mini_embedding_explorer
 ```
+
+```bash
+uv sync
+```
+
+---
 
 ## ▶️ Run the App
 
@@ -69,15 +117,19 @@ streamlit run app.py
 
 ---
 
-# 📁 Project Structure
+## 📁 Project Structure
 
 ```
-mini-embedding-explorer/
+mini_embedding_explorer/
 │
 ├── app.py                 # Streamlit UI
 ├── screenshots/
 ├── embeddings.py          # Embedding + clustering engine
-├── requirements.txt       # Dependencies
+├── tests/
+|    ├── test_clustering.py
+|    ├── test_embeddings.py
+|    └── test_property_based.py
+├── pyproject.toml         # Dependencies
 ├── README.md              # Project documentation
 └── examples/
     └── feedback.csv
@@ -85,23 +137,31 @@ mini-embedding-explorer/
 
 ---
 
-# 🧩 How It Works
+## 🧩 How It Works
 
-- Embeddings  
+<details>
+    <summary>click here</summary>
+
+- **Embeddings** 
 Text is converted into numerical vectors using a SentenceTransformer model.
 
-- Dimensionality Reduction  
+- **Dimensionality Reduction**
 High‑dimensional vectors are compressed into 2D using PCA or UMAP.
 
-- Clustering  
+- **Clustering** 
 KMeans groups similar texts together.
 
-- Visualisation  
+- **Visualisation** 
 The 2D points are plotted so humans can see patterns instantly.
+
+</details>
 
 ---
 
-# 📊 Example Workflow
+## 📊 Example Workflow
+
+<details>
+    <summary>click here</summary>
 
 - Upload a CSV of customer comments
 
@@ -117,9 +177,14 @@ The 2D points are plotted so humans can see patterns instantly.
 
 - Download results
 
+</details>
+
 ---
 
 ## 📝 Example Use Case: Customer Feedback
+
+<details>
+    <summary>click here</summary>
 
 A business uploads:
 
@@ -141,17 +206,26 @@ The tool reveals clusters like:
 
 - This helps teams prioritise improvements.
 
+</details>
+
 ---
 
-# 🛣️ Future Roadmap
+## 🧪 Testing
 
-- Advanced Embedding Models — Add support for larger or domain‑specific models (legal, financial, medical) to improve clustering accuracy for specialised industries.
+- Run the test suite
 
-- Semantic Search Engine — Allow users to search their dataset using natural language queries powered by embeddings, turning the tool into a mini knowledge explorer.
+```bash
+uv run -m pytest
+```
 
-- Topic Labeling — Automatically assign human‑readable labels to clusters (e.g., “Delivery Issues”, “Refund Complaints”), making insights easier for non‑technical teams.
+---
 
-- Interactive Cluster Editing — Let users merge, rename, or split clusters directly in the UI, enabling custom business workflows and cleaner reporting.
+## 🛣️ Roadmap Features
+
+- [ ] **Semantic Search Engine** – Search datasets using natural language queries.
+- [ ] **Topic Labelling** – Automatically assign cluster labels.
+- [ ] **Interactive Cluster Editing** – Merge, rename, or split clusters directly in the UI.
+- [ ] **Advanced Embedding Models** – Add support for larger or domain-specific models.
 
 ---
 

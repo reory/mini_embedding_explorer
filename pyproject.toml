@@ -1,0 +1,26 @@
+[project]
+name = "mini-embedding-explorer"
+version = "0.1.0"
+description = "Interactive visualisation and clustering of text embeddings."
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "numpy>=2.5.4",
+    "pandas>=3.1.1",
+    "scikit-learn>=1.9.1",
+    "sentence-transformers>=6.2.0",
+    "streamlit>=1.67.0",
+    "umap-learn>=0.5.12",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.2.0",
+    "pytest-cov>=7.1.0",
+    "hypothesis>=6.170.15",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+addopts = "--cov=. --cov-report=term-missing"

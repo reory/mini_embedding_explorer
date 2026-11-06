@@ -1,5 +1,7 @@
 # --- Python ---
 __pycache__/
+*cache/
+*.hypothesis/
 *.pyc
 *.pyo
 *.pyd
@@ -24,6 +26,8 @@ venv/
 *.feather
 *.db
 *.csv
+*.txt
+*.xml
 
 # --- Model Files ---
 *.bin
