@@ -226,6 +226,7 @@ uv run -m pytest
 - [ ] **Topic Labelling** – Automatically assign cluster labels.
 - [ ] **Interactive Cluster Editing** – Merge, rename, or split clusters directly in the UI.
 - [ ] **Advanced Embedding Models** – Add support for larger or domain-specific models.
+- [ ] **Lightweight NLP Mode** – Add TF-IDF vectorisation as a lightweight alternative to transformer embeddings.
 
 ---
 
