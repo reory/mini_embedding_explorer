@@ -24,3 +24,14 @@ dev = [
 testpaths = ["tests"]
 python_files = ["test_*.py"]
 addopts = "--cov=. --cov-report=term-missing"
+
+# Hypothesis can generate zero-variance PCA inputs that trigger harmless
+# scikit-learn RuntimeWarnings.
+# Suppress to keep test output clean.
+filterwarnings = [
+    "ignore:invalid value encountered in divide:RuntimeWarning",
+
+    # UMAP warns that fixed random seeds disable some parallel execution.
+    # This is intentional because reproducible results are preferred.
+    "ignore:n_jobs value .*:UserWarning",
+]

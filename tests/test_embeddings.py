@@ -79,3 +79,30 @@ def test_generate_embeddings_returns_one_embedding_per_text(mock_model_class):
     result = generate_embeddings(texts)
 
     assert len(result) == len(texts)
+
+
+def test_reduce_dimensions_umap_returns_two_columns():
+    """Ensure UMAP reduction produces 2D output."""
+
+    vectors = np.random.rand(20, 8)
+
+    reduced = reduce_dimensions(
+        vectors,
+        method="UMAP (high quality)",
+    )
+
+    assert reduced.shape == (20, 2)
+
+
+def test_reduce_dimensions_umap_supports_custom_component_count():
+    """Ensure UMAP honours the requested component count."""
+
+    vectors = np.random.rand(20, 8)
+
+    reduced = reduce_dimensions(
+        vectors,
+        method="UMAP (high quality)",
+        n_components=3,
+    )
+
+    assert reduced.shape == (20, 3)

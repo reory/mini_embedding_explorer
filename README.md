@@ -24,6 +24,7 @@ Perfect for SMEs, councils, charities, and teams that need fast, text understand
 - [Screenshots](#-screenshots)
 - [Features](#-features)
 - [Real-World Use Cases](#-realworld-use-cases)
+- [Expected Data Format](#-expected-data-format)
 - [Installation](#-installation)
 - [Run the App](#️-run-the-app)
 - [Project Structure](#-project-structure)
@@ -50,14 +51,31 @@ Perfect for SMEs, councils, charities, and teams that need fast, text understand
 <details>
     <summary>click here</summary>
 
-- Dashboard and CSV preview
-![Dashboard and CSV preview](screenshots/dashboard_preview_csv.png)
+- Configure the embedding model, dimensionality reduction method, and cluster count before generating embeddings.
+![Sidebar](screenshots/sidebar.png)
 
-- Scatter graph of embeddings
-![Scatter graph of embeddings](screenshots/2d%20embeddings.png)
+---
 
-- Cluster summary of the CSV data
-![Cluster summary of the csv data](screenshots/cluster_summary.png)
+- Upload text data and generate embeddings to discover semantic relationships and clusters.
+![Upload and Generate](screenshots/dashboard1.png)
+
+---
+
+- Preview the uploaded dataset and select the text column to analyse before generating embeddings.
+![Data Preview](screenshots/data_preview.png)
+
+---
+
+- Explore how records are grouped based on meaning, with similar text appearing closer together within clusters.
+![2D Embedding Visualisation](screenshots/embedding_visualisation.png)
+
+---
+
+- Cluster Keywords – Automatically extracts the most common keywords from each cluster to provide a quick overview of grouped themes.
+- Cluster Summary – Shows the original text, assigned cluster, and generated keywords to help explain why records were grouped together.
+![Cluster Keywords and Summary](screenshots/cluster__keywords_summary.png)
+
+---
 
 </details>
 
@@ -70,7 +88,7 @@ Perfect for SMEs, councils, charities, and teams that need fast, text understand
 - Automatic **dimensionality reduction** (PCA or UMAP)  
 - **KMeans clustering** with adjustable cluster count  
 - Interactive **2D scatter plot**  
-- Hover to view original text  
+- Hover to inspect cluster assignments
 - Download clustered results as CSV  
 - Zero configuration — runs locally or on Streamlit Cloud
 
@@ -89,6 +107,31 @@ This tool is intentionally small but delivers real business value:
 - **Fraud Pattern Discovery** — spot repeated scam wording or anomalies  
 - **HR & Recruitment Insights** — compare CVs and job descriptions  
 - **SEO Topic Mapping** — visualise content clusters and gaps  
+
+</details>
+
+---
+
+## 📄 Expected Data Format
+
+<details>
+    <summary>click here</summary>
+
+Mini Embedding Explorer works best with datasets containing one text record per row.
+
+Example:
+
+```csv
+feedback
+"Delivery arrived two days late and the tracking link never updated"
+"The mobile app keeps crashing whenever I try to upload receipts"
+"Customer service was extremely helpful resolving my billing issue"
+"The website login fails every morning around 9am"
+"Received the wrong item in my order, not what I paid for"
+```
+
+### 💡 Tip: 
+.txt files work best when each line contains a single comment, ticket, review, or text record.
 
 </details>
 
@@ -222,11 +265,13 @@ uv run -m pytest
 
 ## 🛣️ Roadmap Features
 
-- [ ] **Semantic Search Engine** – Search datasets using natural language queries.
-- [ ] **Topic Labelling** – Automatically assign cluster labels.
-- [ ] **Interactive Cluster Editing** – Merge, rename, or split clusters directly in the UI.
-- [ ] **Advanced Embedding Models** – Add support for larger or domain-specific models.
+- [x] **Topic Labelling** – Automatically assign cluster labels.
+- [ ] **Interactive Cluster Visualisation** – Explore clusters with hover tooltips, searchable records, and richer Plotly-based visualisations.
 - [ ] **Lightweight NLP Mode** – Add TF-IDF vectorisation as a lightweight alternative to transformer embeddings.
+- [ ] **Advanced Embedding Models** – Add support for larger or domain-specific models.
+- [ ] **Smart CSV Import** – Automatically detect and combine relevant text columns from complex datasets.
+- [ ] **Interactive Cluster Editing** – Merge, rename, or split clusters directly in the UI.
+- [ ] **Semantic Search Engine** – Search datasets using natural language queries.
 
 ---
 

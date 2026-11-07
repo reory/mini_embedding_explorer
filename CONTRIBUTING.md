@@ -1,37 +1,126 @@
-# Contributing to Mini Embedding Explorer
+# 🤝 Contributing to Mini Embedding Explorer
 
-Thank you for your interest in contributing!  
+Thank you for your interest in contributing.
 
----
-
-## 🛠 How to Contribute
-
-### 1. Fork the Repository  
-Create your own fork and work from a feature branch.
-
-### 2. Keep Changes Small  
-This project is designed to stay simple.  
-Please keep PRs focused on a single improvement or fix.
-
-### 3. Follow the Code Style  
-- Write clean, readable Python  
-- Keep functions small and modular  
-- Avoid unnecessary dependencies  
-
-### 4. Submit a Pull Request  
-Open a PR with a clear description of:  
-- What you changed  
-- Why it improves the project  
-- Any relevant screenshots (if UI‑related)
+Mini Embedding Explorer is designed to stay lightweight, easy to understand, and accessible to both developers and non-technical users. Contributions that improve usability, reliability, testing, performance, and documentation are especially welcome.
 
 ---
 
-## 💡 Ideas for Contributions
+## 🏭 Getting Started
 
-- **[New embedding models](ca://s?q=Add_advanced_embedding_models)**  
-- **[Semantic search feature](ca://s?q=Add_semantic_search_feature)**  
-- **[Automatic topic labeling](ca://s?q=Add_topic_labeling_feature)**  
-- **[Interactive cluster editing](ca://s?q=Add_interactive_cluster_editing)**  
+### Clone the Repository
+
+```bash
+git clone https://github.com/reory/mini_embedding_explorer.git
+cd mini_embedding_explorer
+```
+
+### Install Dependencies
+
+```bash
+uv sync
+```
+
+### Run the Application
+
+```bash
+streamlit run app.py
+```
+
+### Run the Test Suite
+
+```bash
+uv run -m pytest
+```
+
+---
+
+## 🧩 Contribution Guidelines
+
+Please keep contributions:
+
+- Small and focused
+- Well documented
+- Consistent with the existing code style
+- Backed by tests where practical
+
+### ✅ Good Contributions
+
+- Bug fixes
+- New tests
+- Documentation improvements
+- Performance improvements
+- User experience enhancements
+- Roadmap features
+
+### ❌ Please Avoid
+
+- Large unrelated changes in a single pull request
+- Unnecessary dependencies
+- Major refactors without discussion
+- Breaking existing functionality
+
+---
+
+## 🧪 Testing
+
+Before opening a pull request, please ensure:
+
+```bash
+uv run -m pytest
+```
+
+runs successfully.
+
+New features should include tests where appropriate.
+
+---
+
+## 📄 Expected Data Formats
+
+### CSV Files
+
+Mini Embedding Explorer works best with datasets containing one text record per row.
+
+Example:
+
+```csv
+feedback
+"Delivery arrived two days late and the tracking link never updated"
+"The mobile app keeps crashing whenever I try to upload receipts"
+"Customer service was extremely helpful resolving my billing issue"
+```
+
+### TXT Files
+
+TXT files should contain one text record per line.
+
+Example:
+
+```text
+Delivery arrived two days late and the tracking link never updated
+The mobile app keeps crashing whenever I try to upload receipts
+Customer service was extremely helpful resolving my billing issue
+```
+
+---
+
+## 🛣️ Roadmap Areas
+
+Contributions are especially welcome in:
+
+- Interactive Cluster Visualisation
+- Lightweight NLP Mode
+- Advanced Embedding Models
+- Smart CSV Import
+- Interactive Cluster Editing
+- Semantic Search Engine
+
+---
+
+## 📸 UI Changes
+
+If your contribution changes the user interface, please include screenshots in your pull request.
 
 ---
 
