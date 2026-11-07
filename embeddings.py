@@ -30,11 +30,13 @@ def reduce_dimensions(vectors, method="PCA (fast)", n_components=2):
     """
 
     if method == "PCA (fast)":
+        # Fast baseline reduction method.
         reducer = PCA(n_components=n_components)
         return reducer.fit_transform(vectors)
 
     elif method == "UMAP (high quality)":
         try:
+            # Import lazily to avoid loading UMAP unless requested.
             import umap
         except ImportError:
             raise ImportError("UMAP is not installed. Run: pip install umap-learn")
@@ -42,6 +44,7 @@ def reduce_dimensions(vectors, method="PCA (fast)", n_components=2):
         return reducer.fit_transform(vectors)
 
     else:
+        # Reject unsupported reduction methods.
         raise ValueError("Unknown reduction method.")
 
 
@@ -53,6 +56,7 @@ def cluster_points(points, n_clusters=5):
     perfect for customer feedback, HR CVs, fraud notes, etc.
     """
 
+    # Use a fixed seed for reproducible clustering.
     kmeans = KMeans(n_clusters=n_clusters, n_init="auto", random_state=42)
     labels = kmeans.fit_predict(points)
     return labels

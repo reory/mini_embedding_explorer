@@ -56,6 +56,7 @@ def test_reduce_dimensions_invalid_method_raises_value_error():
 def test_generate_embeddings_returns_numpy_array(mock_model_class):
     """Ensure embeddings are returned as a NumPy array."""
 
+    # Replace the model with a lightweight mock.
     mock_model = MagicMock()
     mock_model.encode.return_value = [[1.0, 2.0], [3.0, 4.0]]
     mock_model_class.return_value = mock_model
